@@ -1,0 +1,13 @@
+[package]
+name = "bevybasic"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+resolver = "2"
+
+[dependencies]
+bevy = "0.10.1"
+
+[profile.dev]
+opt-level = 1
