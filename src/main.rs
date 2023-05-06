@@ -62,7 +62,7 @@ mod splash {
     struct SplashTimer(Timer);
 
     fn splash_setup(mut commands: Commands, asset_server: Res<AssetServer>) {
-        let icon = asset_server.load("branding/icon.png");
+        let icon = asset_server.load("images/marik.png");
         commands
             .spawn((
                 NodeBundle {
@@ -385,7 +385,7 @@ mod menu {
                     .with_children(|parent| {
                         parent.spawn(
                             TextBundle::from_section(
-                                "Bevy Game Menu UI",
+                                "Menu teste",
                                 TextStyle {
                                     font: font.clone(),
                                     font_size: 80.0,
@@ -408,7 +408,7 @@ mod menu {
                                 MenuButtonAction::Play,
                             ))
                             .with_children(|parent| {
-                                let icon = asset_server.load("textures/Game Icons/right.png");
+                                let icon = asset_server.load("images/play.png");
                                 parent.spawn(ImageBundle {
                                     style: button_icon_style.clone(),
                                     image: UiImage::new(icon),
@@ -429,7 +429,7 @@ mod menu {
                                 MenuButtonAction::Settings,
                             ))
                             .with_children(|parent| {
-                                let icon = asset_server.load("textures/Game Icons/wrench.png");
+                                let icon = asset_server.load("images/config.png");
                                 parent.spawn(ImageBundle {
                                     style: button_icon_style.clone(),
                                     image: UiImage::new(icon),
@@ -450,7 +450,7 @@ mod menu {
                                 MenuButtonAction::Quit,
                             ))
                             .with_children(|parent| {
-                                let icon = asset_server.load("textures/Game Icons/exitRight.png");
+                                let icon = asset_server.load("images/exit.png");
                                 parent.spawn(ImageBundle {
                                     style: button_icon_style,
                                     image: UiImage::new(icon),
@@ -461,6 +461,7 @@ mod menu {
                     });
             });
     }
+
 
     fn settings_menu_setup(mut commands: Commands, asset_server: Res<AssetServer>) {
         let button_style = Style {
